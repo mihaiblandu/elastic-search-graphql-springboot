@@ -1,0 +1,9 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-nodes: 172.17.0.3:9300
+      cluster-name: docker-cluster
+
+  elasticsearch:
+    rest:
+      uris: http://172.17.0.3:9200

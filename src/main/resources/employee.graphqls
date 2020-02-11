@@ -1,0 +1,55 @@
+type Employee {
+    ID: ID
+    name: String!
+    age: Int
+    position: String!
+    cnp: String!
+    organization: Organization
+    departament: Departament
+    idnp: IDNP
+}
+
+type IDNP {
+    idnp: String
+}
+type Organization {
+    id: ID!
+    name: String!
+    address: String
+}
+
+type Departament {
+    id: ID
+    name: String
+}
+
+input inputIDNP {
+    idnp: String
+}
+input inputOrganization {
+    name: String!
+    address: String
+}
+input inputDepartament {
+    name: String!
+}
+input inputEmployee {
+    name: String!
+    age: Int
+    position: String!
+    cnp: String
+    organization: inputOrganization
+    departament: inputDepartament
+}
+
+# Root
+type Query {
+    findAll: [Employee]!
+    findByCnp( cnp : String ): Employee!
+    count: Int!
+}
+
+# Root
+type Mutation {
+    createEmployee(employee: inputEmployee): Employee!
+}
