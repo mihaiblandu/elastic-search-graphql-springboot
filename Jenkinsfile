@@ -8,7 +8,7 @@ pipeline {
         sh 'docker --version;'
         sh 'java -version'
         sh 'ls -la'
-        sh 'sh ./mvnw install'
+        sh './mvnw clean install'
       }
     }
 
