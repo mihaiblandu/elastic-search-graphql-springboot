@@ -32,7 +32,7 @@ pipeline {
 
         stage('Docker') {
           steps {
-            sh 'docker ps -a'
+            sh 'ls'
           }
         }
 
